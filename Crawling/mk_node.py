@@ -1,4 +1,4 @@
-from Crawling.item import nods
+from .item import nods
 
 
 class mk_node():

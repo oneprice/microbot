@@ -1,5 +1,5 @@
-from Crawling.item import meta
-from Crawling.mk_cat import mk_cat
+from .item import meta
+from .mk_cat import mk_cat
 
 
 class mk_meta():
