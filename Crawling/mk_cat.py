@@ -1,4 +1,4 @@
-from .item import category
+from item import category
 
 
 class mk_cat():

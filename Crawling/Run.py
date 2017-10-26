@@ -1,4 +1,4 @@
-from .Crawl import Crawl
+from Crawl import Crawl
 from selenium import webdriver
 from pyvirtualdisplay import Display
 from datetime import datetime

@@ -1,7 +1,7 @@
 import selenium.webdriver.support.ui as ui
 from bs4 import BeautifulSoup
-from .mk_data import mk_data
-from .mk_meta import mk_meta
+from mk_data import mk_data
+from mk_meta import mk_meta
 
 
 class Crawl():
