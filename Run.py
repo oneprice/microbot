@@ -4,13 +4,27 @@ from Crawling.mk_data import mk_data
 from Crawling.mk_meta import mk_meta
 import time
 from multiprocessing import Pool
+import json
 
 URL_F = 'http://shopping.naver.com/detail/detail.nhn?nv_mid='
 URL_M = '&pkey='
 URL_T = '&withFee='
 
 
+def get_MID():
+    req = requests.get('http://127.0.0.1:8000/get/')
+    return req.json()
+
+def post(info, data_list):
+    data = json.dumps({
+        'id': info['id'],
+        'mid': info['mid'],
+        'data': data_list,
+    })
+    requests.post('http://127.0.0.1:8000/return/', data=data)
+
 def get_pkey(mid):
+    print("--- start " + mid + '---')
     work_list = []
     req = requests.get(URL_F + mid)
     html = req.text
@@ -93,7 +107,11 @@ def Crawl(work_list):
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    pool = Pool(processes=4)
-    data_list = pool.map(Crawl, get_pkey('5639964597'))
-    print("--- %s seconds ---" % (time.time() - start_time))
+    while(1):
+        start_time = time.time()
+        info = get_MID()
+        pool = Pool(processes=4)
+        data_list = pool.map(Crawl, get_pkey(info['mid']))
+        post(info, data_list)
+        print("--- %s seconds ---" % (time.time() - start_time))
+        print('')
