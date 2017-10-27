@@ -95,5 +95,5 @@ def Crawl(work_list):
 if __name__ == '__main__':
     start_time = time.time()
     pool = Pool(processes=4)
-    data_list = pool.map(Crawl, get_pkey('10290206353'))
+    data_list = pool.map(Crawl, get_pkey('5639964597'))
     print("--- %s seconds ---" % (time.time() - start_time))
