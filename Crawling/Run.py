@@ -1,23 +1,19 @@
-from Crawl import Crawl
-from selenium import webdriver
-from pyvirtualdisplay import Display
-from datetime import datetime
+from Crawling.Crawl import Crawl
+import time
 
 
 def main():
-    display = Display(visible=0, size=(800, 600))
-    display.start()
-    driver = webdriver.Firefox()
-    now = datetime.now()
 
-    print('start' + str(now))
-    obj = Crawl('5639964597', display, driver)
+    obj = Crawl('5639964597')
     obj.main()
-    now = datetime.now()
 
-    F_json = {'time': now, 'api': 'item_detail', 'data': obj.data_list}
-    print('End'+ str(now))
+    F_json = {'api': 'item_detail', 'data': obj.data_list}
+
+
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))
+

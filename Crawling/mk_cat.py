@@ -1,4 +1,4 @@
-from item import category
+from Crawling.item import category
 
 
 class mk_cat():
