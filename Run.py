@@ -6,13 +6,15 @@ import time
 from multiprocessing import Pool
 import json
 
+GET_URL = 'http://127.0.0.1:8000/get/'
+POST_URL = 'http://127.0.0.1:8000/return/'
 URL_F = 'http://shopping.naver.com/detail/detail.nhn?nv_mid='
 URL_M = '&pkey='
 URL_T = '&withFee='
 
 
 def get_MID():
-    req = requests.get('http://127.0.0.1:8000/get/')
+    req = requests.get(GET_URL)
     return req.json()
 
 def post(info, data_list):
@@ -21,7 +23,7 @@ def post(info, data_list):
         'mid': info['mid'],
         'data': data_list,
     })
-    requests.post('http://127.0.0.1:8000/return/', data=data)
+    requests.post(POST_URL, data=data)
 
 def get_pkey(mid):
     print("--- start " + mid + '---')
@@ -107,7 +109,7 @@ def Crawl(work_list):
 
 
 if __name__ == '__main__':
-    while(1):
+    while 1:
         start_time = time.time()
         info = get_MID()
         pool = Pool(processes=4)
