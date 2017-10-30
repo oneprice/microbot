@@ -54,10 +54,10 @@ Specification
 **HTTP GET**
 
 JSON Type
-Field Name       | Type       | EXP
------------------|------------|----------
-id               |  string    | 상품 아이디
-mid              |  string    | 상품 mid
+|Field Name       | Type       | EXP|
+|-----------------|------------|----------|
+|id               |  string    | 상품 아이디|
+|mid              |  string    | 상품 mid|
 
 
 ----------
@@ -65,32 +65,32 @@ mid              |  string    | 상품 mid
 **HTTP POST**
 
 JSON Type
-Field Name       | Type       | EXP
------------------|------------|----------
-id               |  string    | 상품 아이디
-mid              |  string    | 상품 mid
-data             |  list      | 크롤링한 데이터
+|Field Name       | Type       | EXP|
+|-----------------|------------|----------|
+|id               |  string    | 상품 아이디|
+|mid              |  string    | 상품 mid|
+|data             |  list      | 크롤링한 데이터|
 
 data field
 Dict Type
-Field Name       | Type       | EXP
------------------|------------|----------
-id               |  string    | 상품 아이디
-mid              |  string    | 상품 mid
-pkey             |  int       | 옵션에 대한 고유값
-cat              |  string    | 카테고리
-count            |  int       | 판매몰 수
-item_name        |  string    | 상품명
-option_name      |  string    | 옵션명
-nods             |  list      | 판매몰에대한 정보
+|Field Name       | Type       | EXP|
+|-----------------|------------|----------|
+|id               |  string    | 상품 아이디|
+|mid              |  string    | 상품 mid|
+|pkey             |  int       | 옵션에 대한 고유값|
+|cat              |  string    | 카테고리|
+|count            |  int       | 판매몰 수|
+|item_name        |  string    | 상품명|
+|option_name      |  string    | 옵션명|
+|nods             |  list      | 판매몰에대한 정보|
 
 nods field
 Dict Type
-Field Name       | Type       | EXP
------------------|------------|----------
-id               |  string    | 판매몰 아이디
-name             |  string    | 판매몰 상품명
-mall             |  string    | 판매몰 업체명
-price            |  int       | 판매몰에서 올린 가격
-delivery         |  int       | 판매몰의 배송비
-npay             |  int       | 네이버 패이 지원여부<br>0: False, 1: True
+|Field Name       | Type       | EXP|
+|-----------------|------------|----------|
+|id               |  string    | 판매몰 아이디|
+|name             |  string    | 판매몰 상품명|
+|mall             |  string    | 판매몰 업체명|
+|price            |  int       | 판매몰에서 올린 가격|
+|delivery         |  int       | 판매몰의 배송비|
+|npay             |  int       | 네이버 패이 지원여부<br>0: False, 1: True|
